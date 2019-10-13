@@ -1463,7 +1463,7 @@ var Chess = function(fen) {
           make_move(move);
 
           /* if the next element in array is a comment, it gets appended to comments */
-          if (half_move + 1 < moves.length && is_comment(moves[half_move + 1])) {
+          if (half_move + 1 < moves.length && is_comment(moves[half_move + 1])) { // jwburnside
             /* bring back whitespaces and remove curly brackets */
             comments[c_index] = moves[half_move + 1].replace(/\%20/g, ' ').replace(/\%2C/g, ',').replace(/{(.+?)}/g, '$1');
           } else {
