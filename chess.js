@@ -1430,8 +1430,8 @@ var Chess = function(fen) {
         ms = ms.replace(rav_regex, '');
       }
 
-      /* delete move numbers */
-      ms = ms.replace(/\d+\.(\.\.)?/g, '');
+      // Delete move numbers outside of curly brackets only - jwburnside
+      ms = ms.replace(/\d+\.(\.\.)?(?![^{}]*})/g, '');
 
       /* delete ... indicating black to move */
       ms = ms.replace(/\.\.\./g, '');
